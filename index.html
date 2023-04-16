@@ -221,8 +221,115 @@
         <!-- Slide 5 -->
         <section class="slide-top">
           <span class="background background-gradient"></span>
+          <div class="wrap">
+						<h1 class="text-landing" style="color: white">Model Selection</h1>
+						<h3
+							class="text-subtitle slideInLeft"
+							style="margin-top: 3rem; color: coral"
+						>
+							The Process:
+						</h3>
+            <div class="wrap" style="margin-top: 5rem">
+            <ul class="flexblock steps zoomIn">
+              <li>
+                <h2>01. Data Overview</h2>
+                <p>Discovery of the data: shape, missing values, duplicate values, types of variables, summary statistics.</p>
+              </li>
+              <li>
+                <h2>02. EDA</h2>
+                <p>Investigate the data: visualize univariate, bivariate and multivariate distributions to uncover patterns and correlations.<br/>
+                Prepare the data: decide upon the treatment of missing values and outliers.</p>
+              </li>
+              <li>
+                <h2>03. Model Building</h2>
+                <p>Split data into training and testing sets. Perform scaling if needed and balance the classes if possible. Select a number of models, get their base results and carry out parameter tuning to optimise the model..</p>
+              </li>
+              <li>
+                <h2>04. Model Evaluation & Selection</h2>
+                <p>Compare the models' performance based on the metrics chosen in the problem definition phase. All models perform with varying predictive powers. Addiional considerations for selecting the final model include the interpretability of the results, and the ease of tuning.</p>
+              </li>
+              <li>
+                <h2>05. Analysis of Findings & Limitations</h2>
+                <p>There is a trade-off between precision and recall that needs to be discussed with the business stakeholders. How easily the model can be revisited with new data is also a consideration. The process should be conceived as iterative.</p>
+              </li>
+            </ul>
+          </div>
+          </div>
         </section>
         <!-- Slide 6 -->
+        <section class="slide-top">
+          <span class="background background-gradient"></span>
+          <div class="wrap">
+            <h1 class="text-landing" style="color: white">Model Selection</h1>
+						<h3
+							class="text-subtitle slideInLeft"
+							style="margin-top: 3rem; color: coral"
+						>
+							The Contenders:
+						</h3>
+            <div class="wrap" style="margin-top: 5rem">
+              <figure>
+                <img src="./assets/images/model_comparison.png" alt="">
+              </figure>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Slide 7 -->
+        <section class="slide-top">
+          <span class="background background-gradient"></span>
+          <div class="wrap">
+            <h1 class="text-landing" style="color: white">Model Selection</h1>
+						<h3
+							class="text-subtitle slideInLeft"
+							style="margin-top: 3rem; color: coral"
+						>
+							And the winner is:
+						</h3>
+            <div class="wrap" style="margin-top: 5rem">
+<h4 style="margin-top: 3rem; color: white">Although the XGBoost Classifier model offered the best overall metrics, the <span style="color: coral">tuned Decision Tree classifier</span> was preferred because it provided the following two advantages:
+  <ul class="flexblock reasons">
+  <li style="line-height: 1.5;">a 80% recall for class 1, compared to 68% for class 1 with the XGBoost Classifier - in other words, <strong>the preferred model is able to correctly predict if a borrower will default 80% of the time</strong>.</li>
+  <li style="line-height: 1.5;"><strong>a higher level of transparency</strong>, taking into account the financial institution regulatory requirements for disclosing the loan approval process. In particular, the tuned Decision Tree classifier model is easier to interpret and allows bank officers to understand and convey thresholds value on particular predictors for loan default.</li>
+</ul></h4>
+            </div>
+
+          </div>
+        </section>
+                <!-- Slide 8 -->
+                <section class="slide-top">
+                  <span class="background background-gradient"></span>
+                  <div class="wrap">
+                    <h1 class="text-landing" style="color: white">Findings</h1>
+                    <div class="wrap" style="margin-top: 5rem">
+                      <div class="grid vertical-align">
+                        <div class="column" style="justify-content: flex-start">
+                          <h4 style="color: white">
+                            Key insights from the analysis of 5,960 recent home equity loans are as follows:
+                            <ol class="fadeOut">
+<li style="line-height: 1.5">Debt-to-income ratio is by far the most important predictor of loan default.
+Borrowers with a debt-to-income ratio between 34.79 and 34.82 seem likely to default, as well as borrowers with a debt-to-income exceedingly high over 43.71.</li>
+<li style="line-height: 1.5">Among the borrowers with a debt-to-income ratio less than 34.79, those who have two or more delinquent credit lines (cut point is 1.5 across the sample) appear likely to default as well, especially if they have 24 or less existing credit lines. That indicates that they are unable to keep a smaller number of credit lines in good standing and does not bode well for being able to maintain a new HELOC.</li></ol>
+                          </h4>
+                        </div>
+                        <div class="column fadeOut" style="justify-content: flex-start">
+                          <figure>
+                            <img
+                              class="aligncenter"
+                              src="./assets/images/tree.png"
+                              alt=""
+                            />
+                          </figure>
+                          <h4 style="line-height: 1.5; color: white">The model can be used during the phase of screening loan applicants (given that the required input variables are available) and subsequently deciding whether or not to approve the issuance of the loan.</h4>
+                        </div>
+                      </div>       
+
+                    </div>
+        
+                  </div>
+                </section>
+        <!-- Slide 8 -->
         <section class="bg-trans-dark slide-top">
           <span class="background background-application"></span>
           <div class="wrap">
@@ -319,6 +426,7 @@
         </section>
 			</article>
 		</main>
+    While Home Equity Lines of Credit (HELOCs) can be a useful tool for homeowners, they present significant risks for retail banks. Proper risk management and compliance with regulatory requirements are essential for banks to minimize their exposure to loan defaults. **The project proposes a tuned Decision Tree classifier model for the prediction of loan default.** 
 		<script src="./assets/js/webslides.js"></script>
 		<script src="./assets/js/script.js"></script>
 		<script>
