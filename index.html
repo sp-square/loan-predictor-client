@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Google Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext"
+			rel="stylesheet"
+		/>
+		<!-- Webslides CSS -->
+		<link rel="stylesheet" href="./assets/css/webslides.css" />
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="./assets/css/style.css" />
+		<!-- Plotly JS -->
+		<script
+			src="https://cdn.plot.ly/plotly-2.20.0.min.js"
+			charset="utf-8"
+		></script>
+
+		<title>Capstone Project</title>
+	</head>
+	<body>
+		<main role="main">
+			<article id="webslides" class="horizontal">
+				<!-- Slide 1 -->
+				<section class="bg-trans-dark slide-top">
+					<span class="background background-6"></span>
+					<div class="wrap">
+						<h1 class="text-landing text-shadow">Loan Default Prediction</h1>
+						<h3 class="text-subtitle" style="margin-top: 3rem">
+							A Classification Problem
+						</h3>
+						<p class="text-intro">Presented by Sandrine Poissonnet</p>
+					</div>
+				</section>
+				<!-- Slide 2 -->
+				<section class="bg-trans-dark slide-top">
+					<span class="background background-6"></span>
+					<div class="wrap">
+						<h1 class="text-landing text-shadow">Problem Definition</h1>
+						<h3
+							class="text-subtitle slideInLeft"
+							style="margin-top: 3rem; color: coral"
+						>
+							The Context:
+						</h3>
+						<div class="custom-bg-dark" style="margin-top: 3rem">
+							<ul class="flexblock reasons">
+								<li class="fadeIn">
+									<div class="grid vertical-align">
+										<div class="column" style="justify-content: flex-start">
+											<h2 style="font-size: 4rem; line-height: 1.5">
+												Totalling $11.4 trillion in Q2 2022, mortgages represent
+												by far the biggest part of the US consumer debt
+											</h2>
+											<p style="font-size: 3rem; line-height: 1.5">
+												followed by student loans ($1.6 trillion), auto loans
+												($1.5 trillion), credit cards ($890 billion), other
+												loans ($470 billion), and
+												<strong>HELOCs ($320 billion)</strong>.
+											</p>
+										</div>
+										<div class="column" style="justify-content: flex-start">
+											<figure>
+												<img
+													class="aligncenter"
+													src="./assets/images/mortgages.png"
+													alt=""
+												/>
+											</figure>
+										</div>
+									</div>
+								</li>
+								<li class="fadeIn">
+									<div class="grid vertical-align">
+										<div class="column" style="justify-content: flex-start">
+											<h2 style="font-size: 4rem; line-height: 1.5">
+												After a long decline following the 2008 financial
+												crisis, home equity loans and lines of credit have
+												ticked up, in part due to the high interest rates.
+											</h2>
+											<p style="font-size: 3rem; line-height: 1.5">
+												<a
+													href="https://newsroom.transunion.com/q4-2022-ciir/"
+													target="_blank"
+													><strong>Data from TransUnion</strong></a
+												>
+												shows a 47 percent increase in the origination of home
+												equity loans and a 41 percent uptick in home equity
+												lines of credit (HELOCs), in the third quarter of 2022.
+											</p>
+										</div>
+										<div class="column" style="justify-content: flex-start">
+											<img
+												class="aligncenter"
+												src="./assets/images/heloc.png"
+												alt=""
+											/>
+										</div>
+									</div>
+								</li>
+								<li class="fadeIn">
+									<div class="grid vertical-align">
+										<div class="column" style="justify-content: flex-start">
+											<h2 style="font-size: 4rem; line-height: 1.5">
+												But the delinquencies for mortgages and HELOCs have also
+												crept up.
+											</h2>
+											<p style="font-size: 3rem; line-height: 1.5">
+												In fact, the HELOC delinquency rate in Q2 2022 surpassed
+												the mortgage delinquency, which is highly unusual.
+											</p>
+										</div>
+
+										<div class="column" style="justify-content: flex-start">
+											<img
+												class="aligncenter"
+												src="./assets/images/delinquencies.png"
+												alt=""
+											/>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<!-- Slide 3 -->
+				<section class="bg-trans-dark slide-top">
+					<span class="background background-6"></span>
+					<div class="wrap">
+						<h1 class="text-landing text-shadow">Problem Definition</h1>
+						<h3
+							class="text-subtitle slideInLeft"
+							style="margin-top: 3rem; color: coral"
+						>
+							The Objective:
+						</h3>
+						<div class="card-30 custom-bg-dark zoomIn" style="margin-top: 3rem">
+							<figure>
+								<img
+									class="aligncenter"
+									src="./assets/images/default1.jpeg"
+									alt=""
+								/>
+							</figure>
+							<div class="flex-content">
+								<p style="font-size: 3rem; line-height: 1.5">
+									Considering the rising risks and opportunities, it is
+									particularly important for banks to be judicious about their
+									loan approval process.
+								</p>
+								<p style="font-size: 3rem; line-height: 1.5">
+									The objective is to build a classification model to predict
+									clients who are likely to default on their loan and give
+									recommendations to the bank on the important features to
+									consider while evaluating a loan application.
+								</p>
+								<p style="font-size: 3rem; line-height: 1.5">
+									<strong>Specifically, we want to help the bank avoid two type of
+									errors:</strong>
+                  <ul class="custom-bg-light">
+									<li style="font-size: 3rem; line-height: 1.5; color: black; font-weight: 700">
+										Fail to allow a loan when the applicant would not have
+										defaulted (false positive)
+									</li>
+									<li style="font-size: 3rem; line-height: 1.5; color: black; font-weight: 700">
+										Provide a loan when the applicant ends up defaulting (false negative)
+									</li>
+                </ul>
+								</p>
+								<p style="font-size: 3rem; line-height: 1.5">
+									The latter scenario is the costliest to the bank and we want
+									to <strong>build a model that minimizes false negatives</strong>  - that is
+									predicting that a borrower will not default when the borrower
+									actually default.
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+        <!-- Slide 4 -->
+        <section class="bg-trans-dark slide-top">
+          <span class="background background-application"></span>
+          <div class="wrap">
+            <h1 class="text-landing text-shadow aligncenter"style="margin-bottom: 2rem">Model Prediction</h1>
+            <div class="grid vertical-align">
+              <div class="column">
+                <form>
+                  <fieldset>
+                    <legend>Enter Client's Financial Info</legend>
+                    <ul class="flexblock">
+                      <li>
+                        <input type="text" tabindex="1" name="loan" id="loan" placeholder="Amount of loan requested" required>
+                      </li>
+                      <li>
+                        <select tabindex="2" name="reason" id="reason" required>
+                          <option value="">Select reason for loan requested</option>
+                          <option value="HomeImp">Home Improvement</option>
+                          <option value="DebtCon">Debt Consolidation</option>
+                        </select>
+                      </li>
+                    </ul>
+                      <ul class="flexblock">
+                        <li>
+                          <input type="text" tabindex="3" name="value" id="value" placeholder="Current value of the property" required>
+                        </li>
+                        <li>
+                          <input type="text" tabindex="4" name="mortdue" id="mortdue" placeholder="Amount due on the existing mortgage" required>
+                        </li>
+                      </ul>
+                      <ul class="flexblock">
+                        <li>
+                          <select tabindex="5" name="job" id="job" required>
+                            <option value="">Select type of job</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Office">Office</option>
+                            <option value="ProfExe">Professional | Executive</option>
+                            <option value="Sales">Sales</option>
+                            <option value="Self">Self-Employed</option>
+                            <option value="Other">Other</option>
+                          </select>
+                        </li>
+                        <li>
+                          <input type="text" tabindex="6" name="yoj" id="yoj" placeholder="Years at present job" required>
+                        </li>
+                      </ul>
+                      <ul class="flexblock">
+                        <li>
+                          <input type="text" tabindex="7" name="derog" id="derog" placeholder="Number of major derogatory reports" required>
+                        </li>
+                        <li>
+                          <input type="text" tabindex="8" name="delinq" id="delinq" placeholder="Number of delinquent credit lines" required>
+                        </li>
+                      </ul>
+                      <ul class="flexblock">
+                        <li>
+                          <input type="text" tabindex="9" name="ninq" id="ninq" placeholder="Number of recent credit inquiries" required>
+                        </li>
+                        <li>
+                          <input type="text" tabindex="10" name="clno" id="clno" placeholder="Number of existing credit lines" required>
+                        </li>
+                      </ul>
+                      <ul class="flexblock">
+                        <li>
+                          <input type="text" tabindex="11" name="clage" id="clage" placeholder="Age of the oldest credit line in months" required>
+                        </li>
+                        <li>
+                          <input type="text" tabindex="12" name="debtinc" id="debtinc" placeholder="Debt-to-income ratio" required>
+                        </li>
+                      </ul>
+                    <button type="submit" tabindex="13">Submit</button>
+                  </fieldset>
+                </form>
+              </div>
+              <div class="column" id="prediction"></div>
+            </div>
+          </div>
+        </section>
+			</article>
+		</main>
+		<script src="./assets/js/webslides.js"></script>
+		<script src="./assets/js/script.js"></script>
+		<script>
+			window.ws = new WebSlides();
+		</script>
+	</body>
+</html>

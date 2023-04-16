@@ -1,0 +1,85 @@
+/* :root {
+	--brown: #a88f82;
+	--tan: #f5e1d5;
+	--teal: #71a8a7;
+	--lightteal: #d5f5f5;
+	--light: #fffaf7;
+} */
+
+/* ::selection {
+	color: var(--brown);
+	background-color: var(--light);
+} */
+
+body {
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+.custom-bg-dark {
+	background: rgba(8, 8, 8, 0.35);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.4);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.custom-bg-light {
+	background: rgba(247, 244, 244, 0.4);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(4.5px);
+	-webkit-backdrop-filter: blur(4.5px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#graphics {
+	display: flex;
+}
+
+ol {
+	text-decoration: none;
+}
+
+.background-2 {
+	background-image: url('../images/bg2.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.background-3 {
+	background-image: url('../images/bg3.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.background-4 {
+	background-image: url('../images/bg4.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.background-5 {
+	background-image: url('../images/bg5.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.background-6 {
+	background-image: url('../images/bg6.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.background-application {
+	background-image: url('../images/loan-application.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
