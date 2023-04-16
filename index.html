@@ -159,15 +159,15 @@
 									consider while evaluating a loan application.
 								</p>
 								<p style="font-size: 3rem; line-height: 1.5">
-									<strong>Specifically, we want to help the bank avoid two type of
+									<strong>Specifically, we want to help the bank avoid two types of
 									errors:</strong>
                   <ul class="custom-bg-light">
 									<li style="font-size: 3rem; line-height: 1.5; color: black; font-weight: 700">
-										Type I error - Fail to allow a loan when the applicant would not have
+										Type I error - Fail to approve a loan when the applicant would not have
 										defaulted (false positive)
 									</li>
 									<li style="font-size: 3rem; line-height: 1.5; color: black; font-weight: 700">
-										Type II error - Provide a loan when the applicant ends up defaulting (false negative)
+										Type II error - Approve a loan when the applicant ends up defaulting (false negative)
 									</li>
                 </ul>
 								</p>
@@ -197,7 +197,7 @@
                 <div class="column" style="justify-content: flex-start">
                   <div class="flex-content">
                     <p style="font-size: 3rem; line-height: 1.5">
-                      Given the objective of minimizing false negatives, the classifiers models considered were evaluated based on their performance on the <strong>confusion matrix</strong>.
+                      Given the objective of minimizing false negatives, the classifier models considered were evaluated based on their performance on the <strong>confusion matrix</strong>.
                     </p>
                     <p style="font-size: 3rem; line-height: 1.5">
                       A measure of particular interest for this problem is the <strong>recall</strong>, or the proportion of borrowers that defaulted that were correctly identified as such.
@@ -236,7 +236,7 @@
                 <p>Discovery of the data: shape, missing values, duplicate values, types of variables, summary statistics.</p>
               </li>
               <li>
-                <h2>02. EDA</h2>
+                <h2>02. Exploratory Data Analysis</h2>
                 <p>Investigate the data: visualize univariate, bivariate and multivariate distributions to uncover patterns and correlations.<br/>
                 Prepare the data: decide upon the treatment of missing values and outliers.</p>
               </li>
@@ -250,7 +250,7 @@
               </li>
               <li>
                 <h2>05. Analysis of Findings & Limitations</h2>
-                <p>There is a trade-off between precision and recall that needs to be discussed with the business stakeholders. How easily the model can be revisited with new data is also a consideration. The process should be conceived as iterative.</p>
+                <p>There is a trade-off between precision and recall that needs to be discussed with the business stakeholders. How easily and often the model can and should be revisited with new data is also a consideration. The process should be iterative, with new features engineered, and models re-evaluated.</p>
               </li>
             </ul>
           </div>
