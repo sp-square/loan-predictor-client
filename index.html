@@ -163,17 +163,17 @@
 									errors:</strong>
                   <ul class="custom-bg-light">
 									<li style="font-size: 3rem; line-height: 1.5; color: black; font-weight: 700">
-										Fail to allow a loan when the applicant would not have
+										Type I error - Fail to allow a loan when the applicant would not have
 										defaulted (false positive)
 									</li>
 									<li style="font-size: 3rem; line-height: 1.5; color: black; font-weight: 700">
-										Provide a loan when the applicant ends up defaulting (false negative)
+										Type II error - Provide a loan when the applicant ends up defaulting (false negative)
 									</li>
                 </ul>
 								</p>
 								<p style="font-size: 3rem; line-height: 1.5">
 									The latter scenario is the costliest to the bank and we want
-									to <strong>build a model that minimizes false negatives</strong>  - that is
+									to <strong>build a model that minimizes false negatives, or Type II errors</strong>  - that is,
 									predicting that a borrower will not default when the borrower
 									actually default.
 								</p>
@@ -182,6 +182,47 @@
 					</div>
 				</section>
         <!-- Slide 4 -->
+        <section class="bg-trans-dark slide-top">
+					<span class="background background-6"></span>
+					<div class="wrap">
+						<h1 class="text-landing text-shadow">Problem Definition</h1>
+						<h3
+							class="text-subtitle slideInLeft"
+							style="margin-top: 3rem; color: coral"
+						>
+							The Metrics:
+						</h3>
+            <div class="custom-bg-dark slideInRight" style="margin-top: 3rem">
+              <div class="grid vertical-align">
+                <div class="column" style="justify-content: flex-start">
+                  <div class="flex-content">
+                    <p style="font-size: 3rem; line-height: 1.5">
+                      Given the objective of minimizing false negatives, the classifiers models considered were evaluated based on their performance on the <strong>confusion matrix</strong>.
+                    </p>
+                    <p style="font-size: 3rem; line-height: 1.5">
+                      A measure of particular interest for this problem is the <strong>recall</strong>, or the proportion of borrowers that defaulted that were correctly identified as such.
+                    </p>
+                  </div>
+                </div>
+                <div class="column" style="justify-content: center">
+                  <figure>
+                    <img
+                      class="aligncenter"
+                      src="./assets/images/confusion-matrix1.jpg"
+                      alt=""
+                    />
+                  </figure>
+                  <p class="aligncenter" style="font-size: 3rem; line-height: 1.5; text-align: center; color: rgb(19, 185, 240); font-weight: 500;"><em>Recall = TP / (TP + FN)</em></p>
+                </div>
+              </div>
+						</div>
+          </div>
+        </section>
+        <!-- Slide 5 -->
+        <section class="slide-top">
+          <span class="background background-gradient"></span>
+        </section>
+        <!-- Slide 6 -->
         <section class="bg-trans-dark slide-top">
           <span class="background background-application"></span>
           <div class="wrap">
@@ -193,9 +234,11 @@
                     <legend>Enter Client's Financial Info</legend>
                     <ul class="flexblock">
                       <li>
+                        <label style="margin-bottom: 0;">Loan amount</label>
                         <input type="text" tabindex="1" name="loan" id="loan" placeholder="Amount of loan requested" required>
                       </li>
                       <li>
+                        <label style="margin-bottom: 0;">Reason for loan request</label>
                         <select tabindex="2" name="reason" id="reason" required>
                           <option value="">Select reason for loan requested</option>
                           <option value="HomeImp">Home Improvement</option>
@@ -205,14 +248,17 @@
                     </ul>
                       <ul class="flexblock">
                         <li>
+                          <label style="margin-bottom: 0;">Property value</label>
                           <input type="text" tabindex="3" name="value" id="value" placeholder="Current value of the property" required>
                         </li>
                         <li>
+                          <label style="margin-bottom: 0;">Mortgage balance</label>
                           <input type="text" tabindex="4" name="mortdue" id="mortdue" placeholder="Amount due on the existing mortgage" required>
                         </li>
                       </ul>
                       <ul class="flexblock">
                         <li>
+                          <label style="margin-bottom: 0;">Current job</label>
                           <select tabindex="5" name="job" id="job" required>
                             <option value="">Select type of job</option>
                             <option value="Manager">Manager</option>
@@ -224,30 +270,37 @@
                           </select>
                         </li>
                         <li>
+                          <label style="margin-bottom: 0;">Years at current job</label>
                           <input type="text" tabindex="6" name="yoj" id="yoj" placeholder="Years at present job" required>
                         </li>
                       </ul>
                       <ul class="flexblock">
                         <li>
+                          <label style="margin-bottom: 0;"># derogatory reports</label>
                           <input type="text" tabindex="7" name="derog" id="derog" placeholder="Number of major derogatory reports" required>
                         </li>
                         <li>
+                          <label style="margin-bottom: 0;"># delinquent credit lines</label>
                           <input type="text" tabindex="8" name="delinq" id="delinq" placeholder="Number of delinquent credit lines" required>
                         </li>
                       </ul>
                       <ul class="flexblock">
                         <li>
+                          <label style="margin-bottom: 0;"># recent credit inquiries</label>
                           <input type="text" tabindex="9" name="ninq" id="ninq" placeholder="Number of recent credit inquiries" required>
                         </li>
                         <li>
+                          <label style="margin-bottom: 0;"># existing credit lines</label>
                           <input type="text" tabindex="10" name="clno" id="clno" placeholder="Number of existing credit lines" required>
                         </li>
                       </ul>
                       <ul class="flexblock">
                         <li>
+                          <label style="margin-bottom: 0;">Age of oldest credit line (months)</label>
                           <input type="text" tabindex="11" name="clage" id="clage" placeholder="Age of the oldest credit line in months" required>
                         </li>
                         <li>
+                          <label style="margin-bottom: 0;">Debt-to-income ratio</label>
                           <input type="text" tabindex="12" name="debtinc" id="debtinc" placeholder="Debt-to-income ratio" required>
                         </li>
                       </ul>
@@ -255,7 +308,12 @@
                   </fieldset>
                 </form>
               </div>
-              <div class="column" id="prediction"></div>
+              <div class="column">
+                <div class="card">
+                  <div class="flex-content" id="prediction">
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

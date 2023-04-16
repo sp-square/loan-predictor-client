@@ -83,3 +83,15 @@ ol {
 	background-size: cover;
 	background-attachment: fixed;
 }
+
+.background-gradient {
+	background-color: #ffffff;
+	background-image: linear-gradient(
+		270deg,
+		#c2c0c0 0%,
+		#635c5c 20%,
+		#2e2525 50%,
+		#070303 75%,
+		#000 100%
+	);
+}
