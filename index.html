@@ -238,11 +238,11 @@
               <li>
                 <h2>02. Exploratory Data Analysis</h2>
                 <p>Investigate the data: visualize univariate, bivariate and multivariate distributions to uncover patterns and correlations.<br/>
-                Prepare the data: decide upon the treatment of missing values and outliers.</p>
+                Prepare the data: decide upon the treatment of missing values and outliers.<br/>Engineer new features.</p>
               </li>
               <li>
                 <h2>03. Model Building</h2>
-                <p>Split data into training and testing sets. Perform scaling if needed and balance the classes if possible. Select a number of models, get their base results and carry out parameter tuning to optimise the model..</p>
+                <p>Split data into training and testing sets (better yet: training | validation | holdout).<br/>Perform scaling if needed and balance the classes if possible.<br/>Select a number of models, get their base results and carry out parameter tuning to optimize the model.</p>
               </li>
               <li>
                 <h2>04. Model Evaluation & Selection</h2>
@@ -250,7 +250,7 @@
               </li>
               <li>
                 <h2>05. Analysis of Findings & Limitations</h2>
-                <p>There is a trade-off between precision and recall that needs to be discussed with the business stakeholders. How easily and often the model can and should be revisited with new data is also a consideration. The process should be iterative, with new features engineered, and models re-evaluated.</p>
+                <p>There is a trade-off between precision and recall that needs to be discussed with the business stakeholders.<br/>How easily and often the model can and should be revisited with new data is also a consideration.<br/>The process should be iterative, with new features engineered, and models re-evaluated.</p>
               </li>
             </ul>
           </div>
@@ -288,11 +288,15 @@
 							And the winner is:
 						</h3>
             <div class="wrap" style="margin-top: 5rem">
-<h4 style="margin-top: 3rem; color: white">Although the XGBoost Classifier model offered the best overall metrics, the <span style="color: coral">tuned Decision Tree classifier</span> was preferred because it provided the following two advantages:
-  <ul class="flexblock reasons">
-  <li style="line-height: 1.5;">a 80% recall for class 1, compared to 68% for class 1 with the XGBoost Classifier - in other words, <strong>the preferred model is able to correctly predict if a borrower will default 80% of the time</strong>.</li>
-  <li style="line-height: 1.5;"><strong>a higher level of transparency</strong>, taking into account the financial institution regulatory requirements for disclosing the loan approval process. In particular, the tuned Decision Tree classifier model is easier to interpret and allows bank officers to understand and convey thresholds value on particular predictors for loan default.</li>
-</ul></h4>
+              <h4 style="margin-top: 3rem; color: white">Although the XGBoost Classifier model offered the best overall metrics, the <span style="color: coral">tuned Decision Tree classifier</span> was preferred because it provided the following two advantages:</h4>
+              <ul class="flexblock reasons">
+                <li style="line-height: 1.5; color: white">
+                  <h4>a 80% recall for class 1, compared to 68% for class 1 with the XGBoost Classifier - in other words, <strong>the preferred model is able to correctly predict if a borrower will default 80% of the time.</strong></h4>
+                </li>
+                <li style="line-height: 1.5; color: white">
+                  <h4><strong>a higher level of transparency,</strong> taking into account the financial institution regulatory requirements for disclosing the loan approval process. In particular, the tuned Decision Tree classifier model is easier to interpret and allows bank officers to understand and convey thresholds value on particular predictors for loan default.</h4>
+                </li>
+            </ul>
             </div>
 
           </div>
